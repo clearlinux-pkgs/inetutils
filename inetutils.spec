@@ -6,7 +6,7 @@
 #
 Name     : inetutils
 Version  : 2.2
-Release  : 1
+Release  : 3
 URL      : https://ftp.gnu.org/gnu/inetutils/inetutils-2.2.tar.xz
 Source0  : https://ftp.gnu.org/gnu/inetutils/inetutils-2.2.tar.xz
 Source1  : https://ftp.gnu.org/gnu/inetutils/inetutils-2.2.tar.xz.sig
@@ -15,7 +15,6 @@ Group    : Development/Tools
 License  : GPL-3.0
 Requires: inetutils-bin = %{version}-%{release}
 Requires: inetutils-info = %{version}-%{release}
-Requires: inetutils-libexec = %{version}-%{release}
 Requires: inetutils-license = %{version}-%{release}
 Requires: inetutils-man = %{version}-%{release}
 BuildRequires : Linux-PAM-dev
@@ -34,7 +33,6 @@ project.
 %package bin
 Summary: bin components for the inetutils package.
 Group: Binaries
-Requires: inetutils-libexec = %{version}-%{release}
 Requires: inetutils-license = %{version}-%{release}
 
 %description bin
@@ -47,15 +45,6 @@ Group: Default
 
 %description info
 info components for the inetutils package.
-
-
-%package libexec
-Summary: libexec components for the inetutils package.
-Group: Default
-Requires: inetutils-license = %{version}-%{release}
-
-%description libexec
-libexec components for the inetutils package.
 
 
 %package license
@@ -83,7 +72,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1643217613
+export SOURCE_DATE_EPOCH=1643218320
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -92,7 +81,32 @@ export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=auto "
 export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
 export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
 export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=auto "
-%configure --disable-static
+%configure --disable-static --disable-dnsdomainname \
+--disable-ftp \
+--disable-ftpd \
+--disable-inetd \
+--disable-hostname \
+--disable-ifconfig \
+--disable-logger \
+--disable-ping \
+--disable-ping6 \
+--disable-rcp \
+--disable-rexec \
+--disable-rexecd \
+--disable-rlogin \
+--disable-rlogind \
+--disable-rsh \
+--disable-rshd \
+--disable-syslogd \
+--disable-talk \
+--disable-talkd \
+--disable-telnetd \
+--disable-tftp \
+--disable-tftpd \
+--disable-traceroute \
+--disable-uucpd \
+--disable-whois \
+--enable-telnet
 make  %{?_smp_mflags}
 
 %check
@@ -103,7 +117,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1643217613
+export SOURCE_DATE_EPOCH=1643218320
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/inetutils
 cp %{_builddir}/inetutils-2.2/COPYING %{buildroot}/usr/share/package-licenses/inetutils/aeb23ef9343dcd5bfaf91ec1088f508e646f5370
@@ -114,39 +128,11 @@ cp %{_builddir}/inetutils-2.2/COPYING %{buildroot}/usr/share/package-licenses/in
 
 %files bin
 %defattr(-,root,root,-)
-/usr/bin/dnsdomainname
-/usr/bin/ftp
-/usr/bin/hostname
-/usr/bin/ifconfig
-/usr/bin/logger
-/usr/bin/ping
-/usr/bin/ping6
-/usr/bin/rcp
-/usr/bin/rexec
-/usr/bin/rlogin
-/usr/bin/rsh
-/usr/bin/talk
 /usr/bin/telnet
-/usr/bin/tftp
-/usr/bin/traceroute
-/usr/bin/whois
 
 %files info
 %defattr(0644,root,root,0755)
 /usr/share/info/inetutils.info
-
-%files libexec
-%defattr(-,root,root,-)
-/usr/libexec/ftpd
-/usr/libexec/inetd
-/usr/libexec/rexecd
-/usr/libexec/rlogind
-/usr/libexec/rshd
-/usr/libexec/syslogd
-/usr/libexec/talkd
-/usr/libexec/telnetd
-/usr/libexec/tftpd
-/usr/libexec/uucpd
 
 %files license
 %defattr(0644,root,root,0755)
@@ -154,29 +140,4 @@ cp %{_builddir}/inetutils-2.2/COPYING %{buildroot}/usr/share/package-licenses/in
 
 %files man
 %defattr(0644,root,root,0755)
-/usr/share/man/man1/dnsdomainname.1
-/usr/share/man/man1/ftp.1
-/usr/share/man/man1/hostname.1
-/usr/share/man/man1/ifconfig.1
-/usr/share/man/man1/logger.1
-/usr/share/man/man1/ping.1
-/usr/share/man/man1/ping6.1
-/usr/share/man/man1/rcp.1
-/usr/share/man/man1/rexec.1
-/usr/share/man/man1/rlogin.1
-/usr/share/man/man1/rsh.1
-/usr/share/man/man1/talk.1
 /usr/share/man/man1/telnet.1
-/usr/share/man/man1/tftp.1
-/usr/share/man/man1/traceroute.1
-/usr/share/man/man1/whois.1
-/usr/share/man/man8/ftpd.8
-/usr/share/man/man8/inetd.8
-/usr/share/man/man8/rexecd.8
-/usr/share/man/man8/rlogind.8
-/usr/share/man/man8/rshd.8
-/usr/share/man/man8/syslogd.8
-/usr/share/man/man8/talkd.8
-/usr/share/man/man8/telnetd.8
-/usr/share/man/man8/tftpd.8
-/usr/share/man/man8/uucpd.8
