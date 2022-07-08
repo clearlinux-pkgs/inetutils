@@ -1,5 +1,5 @@
 PKG_NAME := inetutils
-URL = https://ftp.gnu.org/gnu/inetutils/inetutils-2.2.tar.xz
+URL = https://mirrors.kernel.org/gnu/inetutils/inetutils-2.3.tar.xz
 ARCHIVES = 
 
 include ../common/Makefile.common

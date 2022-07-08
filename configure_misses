@@ -1,0 +1,68 @@
+Configure miss: 32-bit host C ABI
+Configure miss: Schedule
+Configure miss: Session_Key
+Configure miss: __opendir2
+Configure miss: cgetent
+Configure miss: compiler option needed when checking for declarations
+Configure miss: crtdefs.h
+Configure miss: gcc options needed to detect all undeclared functions
+Configure miss: getmsg
+Configure miss: getutxuser
+Configure miss: initsetproctitle
+Configure miss: ioctl with POSIX signature
+Configure miss: iruserok_sa
+Configure miss: linewrap.h
+Configure miss: loginx
+Configure miss: loginx in -lutil
+Configure miss: logoutx
+Configure miss: logoutx in -lutil
+Configure miss: logwtmpx
+Configure miss: logwtmpx in -lutil
+Configure miss: memset_s
+Configure miss: ncurses include dir
+Configure miss: netinet/ip_var.h
+Configure miss: obstacks that work with any size object
+Configure miss: orcmd
+Configure miss: orcmd_af
+Configure miss: setlogin
+Configure miss: setutent_r
+Configure miss: sigvec
+Configure miss: stropts.h
+Configure miss: struct ifreq.ifr_index
+Configure miss: struct lastlogx
+Configure miss: struct lastlogx.ll_ss
+Configure miss: struct passwd.pw_change
+Configure miss: struct passwd.pw_expire
+Configure miss: struct sockaddr_in6.sin6_len
+Configure miss: struct sockaddr_storage.ss_len
+Configure miss: struct stat.st_atim.tv_usec
+Configure miss: struct stat.st_ctim.tv_usec
+Configure miss: struct stat.st_mtim.tv_usec
+Configure miss: struct tftphdr.th_u
+Configure miss: struct utmp.ut_exit.ut_exit
+Configure miss: struct utmp.ut_exit.ut_termination
+Configure miss: struct utmpx.ut_exit.ut_exit
+Configure miss: struct utmpx.ut_exit.ut_termination
+Configure miss: struct utmpx.ut_ss
+Configure miss: struct utmpx.ut_syslen
+Configure miss: sys/ioctl_compat.h
+Configure miss: sys/msgbuf.h
+Configure miss: sys/proc.h
+Configure miss: sys/ptyvar.h
+Configure miss: sys/stream.h
+Configure miss: sys/tty.h
+Configure miss: tcpd.h
+Configure miss: tgetent in -ltermcap
+Configure miss: vis.h
+Configure miss: whether ctype.h defines __header_inline
+Configure miss: whether enctype_names is const char
+Configure miss: whether gai_strerrorA is declared
+Configure miss: whether mbrtowc stores incomplete characters
+Configure miss: whether pthread_rwlock_rdlock prefers a writer to a reader
+Configure miss: whether strmode is declared
+Configure miss: whether telopts is declared
+Configure miss: whether tgetent is declared
+Configure miss: whether tgetent needs support
+Configure miss: whether the compiler is clang
+Configure miss: whether the compiler produces multi-arch binaries
+Configure miss: whether this system supports file names of any length
