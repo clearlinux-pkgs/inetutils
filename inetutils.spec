@@ -6,7 +6,7 @@
 #
 Name     : inetutils
 Version  : 2.3
-Release  : 4
+Release  : 5
 URL      : https://mirrors.kernel.org/gnu/inetutils/inetutils-2.3.tar.xz
 Source0  : https://mirrors.kernel.org/gnu/inetutils/inetutils-2.3.tar.xz
 Source1  : https://mirrors.kernel.org/gnu/inetutils/inetutils-2.3.tar.xz.sig
@@ -72,7 +72,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1657318745
+export SOURCE_DATE_EPOCH=1664936815
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -117,10 +117,10 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1657318745
+export SOURCE_DATE_EPOCH=1664936815
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/inetutils
-cp %{_builddir}/inetutils-2.3/COPYING %{buildroot}/usr/share/package-licenses/inetutils/aeb23ef9343dcd5bfaf91ec1088f508e646f5370
+cp %{_builddir}/inetutils-%{version}/COPYING %{buildroot}/usr/share/package-licenses/inetutils/aeb23ef9343dcd5bfaf91ec1088f508e646f5370 || :
 %make_install
 
 %files
