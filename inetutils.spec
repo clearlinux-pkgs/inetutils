@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x51722B08FE4745A2 (simon@josefsson.org)
 #
 Name     : inetutils
-Version  : 2.3
-Release  : 5
-URL      : https://mirrors.kernel.org/gnu/inetutils/inetutils-2.3.tar.xz
-Source0  : https://mirrors.kernel.org/gnu/inetutils/inetutils-2.3.tar.xz
-Source1  : https://mirrors.kernel.org/gnu/inetutils/inetutils-2.3.tar.xz.sig
+Version  : 2.4
+Release  : 6
+URL      : https://mirrors.kernel.org/gnu/inetutils/inetutils-2.4.tar.xz
+Source0  : https://mirrors.kernel.org/gnu/inetutils/inetutils-2.4.tar.xz
+Source1  : https://mirrors.kernel.org/gnu/inetutils/inetutils-2.4.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-3.0
@@ -64,15 +64,15 @@ man components for the inetutils package.
 
 
 %prep
-%setup -q -n inetutils-2.3
-cd %{_builddir}/inetutils-2.3
+%setup -q -n inetutils-2.4
+cd %{_builddir}/inetutils-2.4
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1664936815
+export SOURCE_DATE_EPOCH=1666739357
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -117,10 +117,10 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1664936815
+export SOURCE_DATE_EPOCH=1666739357
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/inetutils
-cp %{_builddir}/inetutils-%{version}/COPYING %{buildroot}/usr/share/package-licenses/inetutils/aeb23ef9343dcd5bfaf91ec1088f508e646f5370 || :
+cp %{_builddir}/inetutils-%{version}/COPYING %{buildroot}/usr/share/package-licenses/inetutils/aeb23ef9343dcd5bfaf91ec1088f508e646f5370
 %make_install
 
 %files

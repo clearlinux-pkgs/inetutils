@@ -2,10 +2,10 @@ Configure miss: 32-bit host C ABI
 Configure miss: Schedule
 Configure miss: Session_Key
 Configure miss: __opendir2
+Configure miss: bool, true, false
 Configure miss: cgetent
 Configure miss: compiler option needed when checking for declarations
 Configure miss: crtdefs.h
-Configure miss: gcc options needed to detect all undeclared functions
 Configure miss: getmsg
 Configure miss: getutxuser
 Configure miss: initsetproctitle
@@ -27,6 +27,7 @@ Configure miss: orcmd_af
 Configure miss: setlogin
 Configure miss: setutent_r
 Configure miss: sigvec
+Configure miss: stdckdint.h
 Configure miss: stropts.h
 Configure miss: struct ifreq.ifr_index
 Configure miss: struct lastlogx
